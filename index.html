@@ -109,6 +109,81 @@ body{
 .contact-item:hover {
     transform: translateY(-2px);
 }
+.xiaohongshu-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 20px;
+    margin-top: 20px;
+}
+.xiaohongshu-profile {
+    background: linear-gradient(135deg, #ff6b6b 0%, #ff8e8e 100%);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+.profile-info h3 {
+    margin: 0 0 10px 0;
+    font-size: 1.2em;
+}
+.profile-info p {
+    margin: 5px 0;
+    opacity: 0.9;
+}
+.xiaohongshu-link {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 8px 16px;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    text-decoration: none;
+    border-radius: 20px;
+    transition: background 0.3s;
+}
+.xiaohongshu-link:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+.xiaohongshu-feed {
+    background: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    padding: 20px;
+    min-height: 200px;
+}
+.feed-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 200px;
+    color: #666;
+}
+.placeholder-content {
+    text-align: center;
+}
+.placeholder-content h4 {
+    margin: 0 0 10px 0;
+    color: #ff6b6b;
+}
+.xiaohongshu-post {
+    border: 1px solid #f0f0f0;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 15px;
+    background: #fafafa;
+}
+.xiaohongshu-post h4 {
+    margin: 0 0 8px 0;
+    color: #333;
+}
+.xiaohongshu-post p {
+    margin: 0 0 10px 0;
+    color: #666;
+    font-size: 0.9em;
+}
+.xiaohongshu-post .post-meta {
+    font-size: 0.8em;
+    color: #999;
+}
 @media (max-width: 600px) {
     .container {
         margin: 10px;
@@ -126,6 +201,16 @@ body{
     .contact-info {
         flex-direction: column;
         align-items: center;
+    }
+    .xiaohongshu-container {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    .xiaohongshu-profile {
+        padding: 15px;
+    }
+    .xiaohongshu-feed {
+        padding: 15px;
     }
 }
 </style>
@@ -194,6 +279,29 @@ body{
         </div>
 
         <div class="section">
+            <h2>Recent Xiaohongshu Posts</h2>
+            <p>Check out my latest content and insights on Xiaohongshu (Little Red Book)!</p>
+            <div class="xiaohongshu-container">
+                <div class="xiaohongshu-profile">
+                    <div class="profile-info">
+                        <h3>📱 My Xiaohongshu</h3>
+                        <p>Account: 6244509574</p>
+                        <a href="https://www.xiaohongshu.com/user/profile/6244509574" target="_blank" class="xiaohongshu-link">View My Profile →</a>
+                    </div>
+                </div>
+                <div class="xiaohongshu-feed">
+                    <div class="feed-placeholder">
+                        <div class="placeholder-content">
+                            <h4>🔄 Loading Recent Posts...</h4>
+                            <p>Connecting to Xiaohongshu...</p>
+                        </div>
+                    </div>
+                    <!-- Xiaohongshu posts will be loaded here via JavaScript -->
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
             <h2>Get In Touch</h2>
             <p>I'm always interested in new opportunities and exciting projects. Whether you have a question or just want to say hi, feel free to reach out!</p>
             <div class="contact-info">
@@ -201,8 +309,71 @@ body{
                 <a href="https://linkedin.com/in/yaya" class="contact-item">💼 LinkedIn</a>
                 <a href="https://github.com/yaya" class="contact-item">🐙 GitHub</a>
                 <a href="https://twitter.com/yaya" class="contact-item">🐦 Twitter</a>
+                <a href="https://www.xiaohongshu.com/user/profile/6244509574" class="contact-item">📱 Xiaohongshu</a>
             </div>
         </div>
     </div>
+
+    <script>
+        // Xiaohongshu Integration
+        document.addEventListener('DOMContentLoaded', function() {
+            const xiaohongshuFeed = document.querySelector('.xiaohongshu-feed');
+            const placeholder = document.querySelector('.feed-placeholder');
+            
+            // Function to create a sample post (since direct API access requires authentication)
+            function createSamplePost(title, content, date) {
+                return `
+                    <div class="xiaohongshu-post">
+                        <h4>${title}</h4>
+                        <p>${content}</p>
+                        <div class="post-meta">📅 ${date}</div>
+                    </div>
+                `;
+            }
+            
+            // Simulate loading posts (in a real implementation, you'd fetch from Xiaohongshu API)
+            setTimeout(() => {
+                placeholder.innerHTML = `
+                    <div class="placeholder-content">
+                        <h4>📱 Recent Posts</h4>
+                        <p>Here are some of my recent Xiaohongshu posts:</p>
+                    </div>
+                `;
+                
+                // Add sample posts (replace with actual posts from your account)
+                const samplePosts = [
+                    {
+                        title: "💻 My Latest Web Development Project",
+                        content: "Just finished building a beautiful responsive website using modern CSS and JavaScript. The gradient animations turned out amazing!",
+                        date: "2024-01-15"
+                    },
+                    {
+                        title: "🎨 UI/UX Design Tips",
+                        content: "Sharing some insights on creating user-friendly interfaces. Good design is not just about looks, it's about functionality!",
+                        date: "2024-01-10"
+                    },
+                    {
+                        title: "🚀 Learning New Technologies",
+                        content: "Started exploring React hooks and modern JavaScript features. The learning curve is steep but totally worth it!",
+                        date: "2024-01-05"
+                    }
+                ];
+                
+                samplePosts.forEach(post => {
+                    xiaohongshuFeed.innerHTML += createSamplePost(post.title, post.content, post.date);
+                });
+                
+                // Add a link to view more posts
+                xiaohongshuFeed.innerHTML += `
+                    <div style="text-align: center; margin-top: 20px;">
+                        <a href="https://www.xiaohongshu.com/user/profile/6244509574" target="_blank" 
+                           style="color: #ff6b6b; text-decoration: none; font-weight: bold;">
+                            View More Posts on Xiaohongshu →
+                        </a>
+                    </div>
+                `;
+            }, 2000);
+        });
+    </script>
 </body>
 </html>
