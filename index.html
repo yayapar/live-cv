@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+ <meta charset="UTF-8" />
+ <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+<title>Welcome to Yaya</title>
+<style>
+body{
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+    line-height: 1.6;
+    color: #333;
+}
+.container{
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    border-radius: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.header {
+    text-align: center;
+    padding: 40px 0;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border-radius: 10px 10px 0 0;
+    margin: -20px -20px 30px -20px;
+}
+.header h1 {
+    margin: 0;
+    font-size: 2.5em;
+    font-weight: 300;
+}
+.header p {
+    margin: 10px 0 0 0;
+    font-size: 1.2em;
+    opacity: 0.9;
+}
+.section {
+    margin-bottom: 40px;
+    padding: 20px;
+    border-left: 4px solid #667eea;
+    background-color: #fafafa;
+    border-radius: 5px;
+}
+.section h2 {
+    color: #667eea;
+    margin-top: 0;
+    font-size: 1.5em;
+}
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin-top: 15px;
+}
+.skill-item {
+    background: white;
+    padding: 15px;
+    border-radius: 5px;
+    border: 1px solid #e0e0e0;
+    text-align: center;
+}
+.skill-item h4 {
+    margin: 0 0 10px 0;
+    color: #667eea;
+}
+.experience-item {
+    margin-bottom: 25px;
+    padding-bottom: 25px;
+    border-bottom: 1px solid #e0e0e0;
+}
+.experience-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+.experience-item h4 {
+    color: #667eea;
+    margin: 0 0 5px 0;
+}
+.experience-item .date {
+    color: #666;
+    font-style: italic;
+    margin-bottom: 10px;
+}
+.contact-info {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 15px;
+    background: #667eea;
+    color: white;
+    border-radius: 25px;
+    text-decoration: none;
+    transition: transform 0.2s;
+}
+.contact-item:hover {
+    transform: translateY(-2px);
+}
+@media (max-width: 600px) {
+    .container {
+        margin: 10px;
+        padding: 15px;
+    }
+    .header {
+        padding: 30px 0;
+    }
+    .header h1 {
+        font-size: 2em;
+    }
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+    .contact-info {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+</style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Yaya</h1>
+            <p>Web Developer & Creative Professional</p>
+        </div>
+
+        <div class="section">
+            <h2>About Me</h2>
+            <p>Hello! I'm Yaya, a passionate web developer and creative professional. I love creating beautiful, functional websites that provide great user experiences. With a strong foundation in modern web technologies, I enjoy turning complex problems into simple, elegant solutions.</p>
+            <p>When I'm not coding, you can find me exploring new technologies, contributing to open-source projects, or sharing knowledge with the developer community.</p>
+        </div>
+
+        <div class="section">
+            <h2>Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-item">
+                    <h4>Frontend Development</h4>
+                    <p>HTML5, CSS3, JavaScript, React, Vue.js</p>
+                </div>
+                <div class="skill-item">
+                    <h4>Backend Development</h4>
+                    <p>Node.js, Python, PHP, Database Design</p>
+                </div>
+                <div class="skill-item">
+                    <h4>Design & Tools</h4>
+                    <p>UI/UX Design, Figma, Git, VS Code</p>
+                </div>
+                <div class="skill-item">
+                    <h4>Soft Skills</h4>
+                    <p>Problem Solving, Team Collaboration, Communication</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Experience</h2>
+            <div class="experience-item">
+                <h4>Senior Web Developer</h4>
+                <div class="date">2022 - Present</div>
+                <p>Leading development of modern web applications using React and Node.js. Collaborating with cross-functional teams to deliver high-quality products that meet business requirements.</p>
+            </div>
+            <div class="experience-item">
+                <h4>Frontend Developer</h4>
+                <div class="date">2020 - 2022</div>
+                <p>Developed responsive web interfaces and improved user experience across multiple projects. Worked with HTML, CSS, JavaScript, and various frontend frameworks.</p>
+            </div>
+            <div class="experience-item">
+                <h4>Junior Developer</h4>
+                <div class="date">2018 - 2020</div>
+                <p>Started my journey in web development, learning the fundamentals and contributing to small-scale projects while building a strong foundation in programming principles.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Education</h2>
+            <div class="experience-item">
+                <h4>Bachelor's in Computer Science</h4>
+                <div class="date">2014 - 2018</div>
+                <p>Graduated with honors, focusing on software engineering and web development principles.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Get In Touch</h2>
+            <p>I'm always interested in new opportunities and exciting projects. Whether you have a question or just want to say hi, feel free to reach out!</p>
+            <div class="contact-info">
+                <a href="mailto:yaya@example.com" class="contact-item">📧 Email</a>
+                <a href="https://linkedin.com/in/yaya" class="contact-item">💼 LinkedIn</a>
+                <a href="https://github.com/yaya" class="contact-item">🐙 GitHub</a>
+                <a href="https://twitter.com/yaya" class="contact-item">🐦 Twitter</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
